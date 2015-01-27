@@ -39,7 +39,7 @@ public class SiteInterface extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		final String JDBC_DRIVER = "com.mysql.jdbc.Driver";
-		final String DB_URL = "jdbc:mysql://localhost/test";
+		final String DB_URL = "jdbc:mysql://localhost/SU_ARTIFACT";
 		// Database credentials
 		final String USER = "root";
 		final String PASS = "root";

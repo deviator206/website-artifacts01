@@ -1,0 +1,49 @@
+mysql> create table categoryDetails (catId int AUTO_INCREMENT NOT NULL, catName
+varchar(255), description varchar(300), PRIMARY KEY (catId));
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> describe categoryDetails;
++-------------+--------------+------+-----+---------+----------------+
+| Field       | Type         | Null | Key | Default | Extra          |
++-------------+--------------+------+-----+---------+----------------+
+| catId       | int(11)      | NO   | PRI | NULL    | auto_increment |
+| catName     | varchar(255) | YES  |     | NULL    |                |
+| description | varchar(300) | YES  |     | NULL    |                |
++-------------+--------------+------+-----+---------+----------------+
+3 rows in set (0.00 sec)
+
+mysql> insert into categoryDetails (catName,description) values("test1","blan bl
+ah blah");
+
+
+mysql> create table imageDetails (imageId int NOT NULL AUTO_INCREMENT,imgDescrip
+tion varchar(255),imgTitle varchar(255),catId int ,PRIMARY KEY (imageId),FOREIGN
+ KEY (catId) REFERENCES categoryDetails(catId) );
+Query OK, 0 rows affected (0.13 sec)
+
+mysql> describe imageList;
+ERROR 1146 (42S02): Table 'test.imagelist' doesn't exist
+mysql> describe imagedetails;
++----------------+--------------+------+-----+---------+----------------+
+| Field          | Type         | Null | Key | Default | Extra          |
++----------------+--------------+------+-----+---------+----------------+
+| imageId        | int(11)      | NO   | PRI | NULL    | auto_increment |
+| imgDescription | varchar(255) | YES  |     | NULL    |                |
+| imgTitle       | varchar(255) | YES  |     | NULL    |                |
+| catId          | int(11)      | YES  | MUL | NULL    |                |
++----------------+--------------+------+-----+---------+----------------+
+
+
+
+
+mysql> insert into imageDetails (imgDescription,imgTitle,catId) values("test 1 i
+mage from world that has come to an end","kuch bhi rakh de",1);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into imageDetails (imgDescription,imgTitle,catId) values("test 1 i
+mage from world that has come to an end","kuch bhi rakh de-2",1);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into imageDetails (imgDescription,imgTitle,catId) values("test 1 i
+mage from world that has come to an end","kuch bhi rakh de-3",1);
+Query OK, 1 row affected (0.00 sec)
