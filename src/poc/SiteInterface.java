@@ -42,7 +42,7 @@ public class SiteInterface extends HttpServlet {
 		final String DB_URL = "jdbc:mysql://localhost/SU_ARTIFACT";
 		// Database credentials
 		final String USER = "root";
-		final String PASS = "root";
+		final String PASS = "Temp1234";
 
 		try {
 			// register JDBC driver
@@ -107,16 +107,13 @@ public class SiteInterface extends HttpServlet {
 			
 			
 
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (JSONException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		} catch (Exception e) {
+			
+			PrintWriter out = response.getWriter();
+			//out.write(e.printStackTrace());
+			out.print("asdasd :: "+e.toString());
+			out.close();
+		} 
 
 	}
 
